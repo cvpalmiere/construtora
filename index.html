@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construtora · Construção e financiamento</title>
+  <meta name="description" content="Landing page profissional para construtora do programa Minha Casa Minha Vida.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gelo: #F5F3EE;
+      --amarelo: #F5C518;
+      --preto-marca: #0A0A0A;
+      --cinza-escuro: #151515;
+      --fonte-archivo: 'Archivo Black', sans-serif;
+      --fonte-hind: 'Hind', sans-serif;
+    }
+
+    body {
+      font-family: var(--fonte-hind);
+      background-color: var(--gelo);
+      color: var(--preto-marca);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .navegacao {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--cinza-escuro);
+      padding: 1rem 1.5rem;
+    }
+
+    .nav-container {
+      max-width: 768px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-nav {
+      max-width: 70px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-marca {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      color: var(--gelo);
+    }
+
+    .heroi {
+      background: var(--amarelo);
+      padding: 3.5rem 1.5rem 3rem;
+    }
+
+    @media (min-width: 600px) {
+      .heroi {
+        padding: 6rem 1.5rem 5rem;
+      }
+    }
+
+    .hero-conteudo {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .selo-mcmv {
+      display: inline-block;
+      background: var(--preto-marca);
+      color: var(--amarelo);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .titulo-hero {
+      font-family: var(--fonte-archivo);
+      font-size: 52px;
+      line-height: 0.9;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      color: var(--preto-marca);
+      text-wrap: balance;
+    }
+
+    @media (min-width: 600px) {
+      .titulo-hero {
+        font-size: 96px;
+      }
+    }
+
+    .hero-sub {
+      margin-top: 2rem;
+      max-width: 56ch;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.4;
+      color: rgba(10,10,10,0.9);
+    }
+
+    @media (min-width: 600px) {
+      .hero-sub {
+        font-size: 1.25rem;
+      }
+    }
+
+    .mosaico {
+      background: var(--gelo);
+      padding: 0.75rem;
+    }
+
+    @media (min-width: 580px) {
+      .mosaico {
+        padding: 1.5rem;
+      }
+    }
+
+    .mosaico-wrapper {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .mosaico-topo {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      padding: 0 0.25rem;
+    }
+
+    .mosaico-headline {
+      font-family: var(--fonte-archivo);
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      line-height: 1;
+      letter-spacing: -0.5px;
+    }
+
+    @media (min-width: 580px) {
+      .mosaico-headline {
+        font-size: 2.25rem;
+      }
+    }
+
+    .mosaico-tag {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      color: rgba(10,10,10,0.5);
+    }
+
+    .grade-pilares {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 580px) {
+      .grade-pilares {
+        gap: 1.5rem;
+      }
+    }
+
+    .cartao {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
+    }
+
+    .cartao img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .col-2 {
+      grid-column: span 2;
+    }
+
+    .aspect-1-1 {
+      aspect-ratio: 1 / 1;
+    }
+
+    .aspect-3-4 {
+      aspect-ratio: 3 / 4;
+    }
+
+    .aspect-16-9 {
+      aspect-ratio: 16 / 9;
+    }
+
+    .cartao-preto {
+      background: var(--preto-marca);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      aspect-ratio: 1 / 1;
+    }
+
+    .pilar-num {
+      font-family: var(--fonte-archivo);
+      font-size: 1.875rem;
+      line-height: 1;
+      color: var(--amarelo);
+    }
+
+    .pilar-titulo-escuro {
+      font-family: var(--fonte-archivo);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      line-height: 1.2;
+      color: var(--gelo);
+    }
+
+    .pilar-desc {
+      margin-top: 0.5rem;
+      font-family: var(--fonte-hind);
+      font-size: 11px;
+      line-height: 1.4;
+      color: rgba(245, 243, 238, 0.7);
+      text-transform: none;
+    }
+
+    .cartao-amarelo {
+      background: var(--amarelo);
+      padding: 1.5rem;
+    }
+
+    @media (min-width: 580px) {
+      .cartao-amarelo {
+        padding: 2rem;
+      }
+    }
+
+    .cartao-amarelo .pilar-num {
+      color: var(--preto-marca);
+    }
+
+    .cartao-amarelo .pilar-titulo-escuro {
+      color: var(--preto-marca);
+      font-size: 1.125rem;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 580px) {
+      .cartao-amarelo .pilar-titulo-escuro {
+        font-size: 1.5rem;
+      }
+    }
+
+    .cartao-amarelo .pilar-desc {
+      color: rgba(10,10,10,0.8);
+      font-size: 0.875rem;
+      max-width: 52ch;
+      margin-top: 0.5rem;
+    }
+
+    .cartao-claro {
+      background: rgba(245, 197, 24, 0.1);
+      padding: 1.5rem;
+    }
+
+    @media (min-width: 580px) {
+      .cartao-claro {
+        padding: 2rem;
+      }
+    }
+
+    .cartao-claro .pilar-num {
+      color: rgba(10,10,10,0.6);
+    }
+
+    .cartao-claro .pilar-titulo-escuro {
+      color: var(--preto-marca);
+      font-size: 1.125rem;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 580px) {
+      .cartao-claro .pilar-titulo-escuro {
+        font-size: 1.5rem;
+      }
+    }
+
+    .cartao-claro .pilar-desc {
+      color: rgba(10,10,10,0.8);
+      font-size: 0.875rem;
+      max-width: 52ch;
+      margin-top: 0.5rem;
+    }
+
+    .sobre {
+      background: var(--preto-marca);
+      color: var(--gelo);
+      padding: 4rem 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .sobre {
+        padding: 6rem 1.5rem;
+      }
+    }
+
+    .sobre-wrapper {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .kicker {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3.6px;
+      color: var(--amarelo);
+    }
+
+    .headline {
+      font-family: var(--fonte-archivo);
+      font-size: 1.875rem;
+      text-transform: uppercase;
+      line-height: 0.95;
+      letter-spacing: -0.5px;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .headline {
+        font-size: 3rem;
+      }
+    }
+
+    .sobre-texto {
+      margin-top: 2rem;
+      max-width: 56ch;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(245, 243, 238, 0.8);
+    }
+
+    @media (min-width: 768px) {
+      .sobre-texto {
+        font-size: 1.125rem;
+      }
+    }
+
+    .sobre-texto strong {
+      color: var(--gelo);
+      font-weight: 600;
+    }
+
+    .servicos {
+      background: var(--gelo);
+      padding: 4rem 1.5rem;
+    }
+
+    @media (min-width: 700px) {
+      .servicos {
+        padding: 6rem 1.5rem;
+      }
+    }
+
+    .servicos-box {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .etiqueta {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3.6px;
+      color: rgba(10,10,10,0.5);
+    }
+
+    .titulo-secao {
+      font-family: var(--fonte-archivo);
+      font-size: 1.875rem;
+      text-transform: uppercase;
+      line-height: 0.95;
+      letter-spacing: -0.5px;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 700px) {
+      .titulo-secao {
+        font-size: 3rem;
+      }
+    }
+
+    .lista-servicos {
+      margin-top: 2.5rem;
+      list-style: none;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .item-servico {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .item-servico:last-child {
+      border-bottom: none;
+    }
+
+    @media (min-width: 700px) {
+      .item-servico {
+        gap: 2rem;
+        padding: 2rem 0;
+      }
+    }
+
+    .num-servico {
+      font-family: var(--fonte-archivo);
+      font-size: 0.875rem;
+      line-height: 1;
+      color: rgba(10,10,10,0.4);
+    }
+
+    @media (min-width: 700px) {
+      .num-servico {
+        font-size: 1rem;
+      }
+    }
+
+    .nome-servico {
+      font-family: var(--fonte-archivo);
+      font-size: 1rem;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    @media (min-width: 700px) {
+      .nome-servico {
+        font-size: 1.25rem;
+      }
+    }
+
+    .desc-servico {
+      margin-top: 0.5rem;
+      font-family: var(--fonte-hind);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: rgba(10,10,10,0.7);
+      text-transform: none;
+    }
+
+    .numeros {
+      background: var(--amarelo);
+      padding: 4rem 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .numeros {
+        padding: 5rem 1.5rem;
+      }
+    }
+
+    .numeros-grid {
+      max-width: 768px;
+      margin: 0 auto;
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .numeros-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .categoria {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3.6px;
+      color: rgba(10,10,10,0.6);
+    }
+
+    .valor-grande {
+      font-family: var(--fonte-archivo);
+      font-size: 3.75rem;
+      line-height: 1;
+      color: var(--preto-marca);
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .valor-grande {
+        font-size: 6rem;
+      }
+    }
+
+    .sub-numero {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(10,10,10,0.8);
+    }
+
+    .frase-destaque {
+      font-family: var(--fonte-archivo);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      line-height: 1.2;
+      border-top: 1px solid rgba(10,10,10,0.2);
+      padding-top: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .frase-destaque {
+        border-top: none;
+        border-left: 1px solid rgba(10,10,10,0.2);
+        padding-top: 0;
+        padding-left: 2rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    .frase-sub {
+      margin-top: 1rem;
+      font-family: var(--fonte-hind);
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: rgba(10,10,10,0.8);
+      text-transform: none;
+    }
+
+    .rodape {
+      background: var(--cinza-escuro);
+      color: var(--gelo);
+      padding: 4rem 1.5rem 2rem;
+    }
+
+    .rodape-wrapper {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .logo-rodape {
+      max-width: 100px;
+      height: auto;
+      display: block;
+    }
+
+    .info-grade {
+      margin-top: 3rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 600px) {
+      .info-grade {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+
+    .info-rotulo {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      color: rgba(245, 243, 238, 0.4);
+    }
+
+    .info-texto {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: rgba(245, 243, 238, 0.9);
+    }
+
+    .btn-wpp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #25D366;
+      color: white;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.9rem 2.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+      animation: pulse 2.5s infinite;
+    }
+
+    .btn-wpp:hover {
+      background: #1DA851;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3); }
+      50% { box-shadow: 0 4px 28px rgba(37, 211, 102, 0.6); }
+    }
+
+    .btn-wpp svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .wpp-holder {
+      display: flex;
+      justify-content: center;
+      padding: 2rem 0 1rem;
+    }
+
+    .rodape-bottom {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 1rem;
+      border-top: 1px solid rgba(245, 243, 238, 0.1);
+      padding-top: 2rem;
+    }
+
+    .copyright {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      color: rgba(245, 243, 238, 0.4);
+    }
+
+    .badge-mcmv {
+      background: var(--amarelo);
+      color: var(--preto-marca);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3.6px;
+      padding: 0.25rem 0.5rem;
+    }
+
+    @media (max-width: 400px) {
+      .titulo-hero {
+        font-size: 38px;
+      }
+      .valor-grande {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navegacao">
+    <div class="nav-container">
+      <img src="logo.jpeg" alt="Construtora Modelo" class="logo-nav">
+      <span class="nav-marca">Construtora Modelo</span>
+    </div>
+  </nav>
+
+  <header class="heroi">
+    <div class="hero-conteudo">
+      <span class="selo-mcmv">Minha Casa Minha Vida</span>
+      <h1 class="titulo-hero">O sonho da<br>casa própria<br>começa aqui.</h1>
+      <p class="hero-sub">Da planta ao financiamento, cuidamos de tudo para você. Financiamento direto com a Caixa, sem complicação.</p>
+    </div>
+  </header>
+
+  <section class="mosaico">
+    <div class="mosaico-wrapper">
+      <div class="mosaico-topo">
+        <h2 class="mosaico-headline">Nossos<br>pilares</h2>
+        <span class="mosaico-tag">Por que nos escolher</span>
+      </div>
+
+      <div class="grade-pilares">
+        <div class="cartao col-2 aspect-3-4">
+          <img src="obra1.jpeg" alt="Obra 1" width="1200" height="1600">
+        </div>
+
+        <div class="cartao cartao-preto">
+          <span class="pilar-num">01</span>
+          <div>
+            <p class="pilar-titulo-escuro">Obra bem<br>executada</p>
+            <p class="pilar-desc">Acabamento de qualidade, materiais selecionados e prazo cumprido.</p>
+          </div>
+        </div>
+
+        <div class="cartao aspect-1-1">
+          <img src="obra2.jpeg" alt="Obra 2" width="800" height="800" loading="lazy">
+        </div>
+
+        <div class="cartao cartao-amarelo col-2">
+          <span class="pilar-num">02</span>
+          <p class="pilar-titulo-escuro">Financiamento descomplicado</p>
+          <p class="pilar-desc">Direto com a Caixa Econômica, sem intermediários. Simples e rápido.</p>
+        </div>
+
+        <div class="cartao col-2 aspect-16-9">
+          <img src="obra3.jpeg" alt="Obra 3" width="1200" height="800" loading="lazy">
+        </div>
+
+        <div class="cartao cartao-claro col-2">
+          <span class="pilar-num">03</span>
+          <p class="pilar-titulo-escuro">Documentação em ordem</p>
+          <p class="pilar-desc">Toda papelada regularizada para você dormir tranquilo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre">
+    <div class="sobre-wrapper">
+      <span class="kicker">Quem somos</span>
+      <h2 class="headline">Casa própria,<br>feita com<br>responsabilidade.</h2>
+      <p class="sobre-texto">
+        Especializada no programa <strong>Minha Casa Minha Vida</strong>, atuamos com excelência na região, transformando o sonho da casa própria em realidade concreta — com responsabilidade, transparência e acabamento de respeito.
+      </p>
+    </div>
+  </section>
+
+  <section class="servicos">
+    <div class="servicos-box">
+      <span class="etiqueta">Nossos serviços</span>
+      <h2 class="titulo-secao">O que fazemos<br>por você.</h2>
+
+      <ul class="lista-servicos">
+        <li class="item-servico">
+          <span class="num-servico">01</span>
+          <div>
+            <h3 class="nome-servico">Minha Casa Minha Vida</h3>
+            <p class="desc-servico">Unidades habitacionais pelo programa federal com documentação regularizada.</p>
+          </div>
+        </li>
+        <li class="item-servico">
+          <span class="num-servico">02</span>
+          <div>
+            <h3 class="nome-servico">Financiamento CAIXA</h3>
+            <p class="desc-servico">Direto com a Caixa Econômica, sem intermediários desnecessários.</p>
+          </div>
+        </li>
+        <li class="item-servico">
+          <span class="num-servico">03</span>
+          <div>
+            <h3 class="nome-servico">Negociação transparente</h3>
+            <p class="desc-servico">Assessoria com valores justos e clareza total do início ao fim.</p>
+          </div>
+        </li>
+        <li class="item-servico">
+          <span class="num-servico">04</span>
+          <div>
+            <h3 class="nome-servico">Atendimento regional</h3>
+            <p class="desc-servico">Foco na região — perto de você.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="numeros">
+    <div class="numeros-grid">
+      <div>
+        <span class="categoria">Empreendimentos</span>
+        <p class="valor-grande">+100</p>
+        <p class="sub-numero">Empreendimentos entregues na região.</p>
+      </div>
+      <div class="frase-destaque">
+        <p>Da planta<br>ao financiamento,<br>a gente cuida.</p>
+        <p class="frase-sub">Atendimento humano, próximo e sem enrolação — do primeiro contato à entrega das chaves.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <div class="rodape-wrapper">
+      <img src="logo.jpeg" alt="Construtora Modelo" class="logo-rodape">
+
+      <div class="info-grade">
+        <div>
+          <p class="info-rotulo">Endereço</p>
+          <p class="info-texto">
+            Endereço da Construtora<br>
+            Bairro — Cidade — UF<br>
+            CEP XXXXX-XXX
+          </p>
+        </div>
+        <div>
+          <p class="info-rotulo">Telefone</p>
+          <p class="info-texto">
+            (XX) XXXXX-XXXX
+          </p>
+        </div>
+        <div>
+          <p class="info-rotulo">Atuação</p>
+          <p class="info-texto">
+            Cidade de Atuação<br>
+            Região de Atuação
+          </p>
+        </div>
+      </div>
+
+      <div class="wpp-holder">
+        <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C+gostaria+de+saber+mais" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="btn-wpp">
+          <svg viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+          </svg>
+          Entrar em contato
+        </a>
+      </div>
+
+      <div class="rodape-bottom">
+        <p class="copyright">&copy; 2026 Construtora Modelo</p>
+        <span class="badge-mcmv">Minha Casa Minha Vida</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
