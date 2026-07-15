@@ -48,13 +48,6 @@ text
 - Variáveis CSS (design system)
 - GitHub Pages (deploy)
 
-## 📸 Preview
-
-<div align="center">
-
-*(adicione um print do site aqui)*
-
-</div>
 
 ## 🔗 Acesso
 
